@@ -38,17 +38,9 @@ void draw () {
   textAlign(CENTER); 
   text ("candyfloss for all you candyhearts", width/2, height/2); 
 
-//  println("rotationRange = " + mappedR + " | ledRange = " + colorVal);
+  //  println("rotationRange = " + mappedR + " | ledRange = " + colorVal);
 
   // now make controls for rotation and color ranges
-
-  int mappedRotation = int(map(rotationVal, 0, 1023, 0, 180));
-  int mappedColor = int(map(colorVal, 0, 1023, 0, 255)); 
-
-  myPort.write(mappedRotation + "," + mappedColor+"\n");
-  
-   println(mappedRotation + "," + mappedColor);
-
 } 
 
 
@@ -60,7 +52,13 @@ void onRangeMessage (String name, int value) {
   }
   if (name.equals("lightColor")) {
     colorVal = value;
-  }
+  } 
+  int mappedRotation = int(map(rotationVal, 0, 1023, 0, 180));
+  int mappedColor = int(map(colorVal, 0, 1023, 0, 255)); 
+
+  myPort.write(mappedRotation + "," + mappedColor+"\n");
+
+  println(mappedRotation + "," + mappedColor);
 } 
 
 void serialEvent(Serial myPort)
@@ -69,3 +67,4 @@ void serialEvent(Serial myPort)
   String myString = myPort.readStringUntil('\n');
   println(myString);
 }
+

@@ -63,7 +63,7 @@ void loop() {
 
   analogWrite(redPin, colorVal);
   analogWrite(greenPin, colorVal);
-  analogWrite(bluePin, colorVal);
+  analogWrite(bluePin, 255-colorVal);
 
 
 }

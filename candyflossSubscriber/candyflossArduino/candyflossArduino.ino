@@ -23,6 +23,7 @@ void setup()
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
   pinMode(bluePin, OUTPUT);
+
 } 
 
 
@@ -55,28 +56,18 @@ void loop() {
 
   //SERVO MOTOR
   hatServo.write(rotationVal);
-  //delay(15);
 
-  //  for (pos = 0; pos< 180; pos +=1)
-  //  {
-  //    hatServo.write(pos);
-  //    delay(rotationVal); 
-  //  }
-  //  for (pos = 180; pos>= 0; pos-=1)
-  //  {
-  //    hatServo.write(pos);
-  //    delay(rotationVal);
-  //  }
 
 
   //RGB LED
-//
-//  analogWrite(redPin, colorVal);
-//  analogWrite(greenPin, colorVal);
-//  analogWrite(bluePin, colorVal);
-//  delay(1000);
+
+  analogWrite(redPin, colorVal);
+  analogWrite(greenPin, colorVal);
+  analogWrite(bluePin, colorVal);
+
 
 }
+
 
 
 
